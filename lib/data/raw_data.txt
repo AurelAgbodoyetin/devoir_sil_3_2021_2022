@@ -25,6 +25,6 @@ possibleAnswers : Stateless, Fonction, Widget, Column
 correctAnswerIndex : 
 
 Objet 6
-question : En Flutter, les widgets sont divisés en :
+question : En Flutter, les widgets sont divisés en ...
 possibleAnswers : 2 grandes catégories , 4 grandes catégories, 3 grandes catégories, Pas de classification
 correctAnswerIndex : 
