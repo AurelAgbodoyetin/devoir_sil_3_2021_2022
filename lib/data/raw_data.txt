@@ -26,5 +26,5 @@ correctAnswerIndex :
 
 Objet 6
 question : En Flutter, les widgets sont divisés en :
-possibleAnswers : 2 grandes classes , 4 grandes classes, 3 grandes classes, Pas de classification
+possibleAnswers : 2 grandes catégories , 4 grandes catégories, 3 grandes catégories, Pas de classification
 correctAnswerIndex : 
