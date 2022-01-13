@@ -1,0 +1,30 @@
+Objet 1
+question : Qu'est - ce que Flutter ?
+possibleAnswers : Un SDK permettant de développer des applications crossplatform, Un package permettant de développer des applications crossplatform, Un framework permettant de développer des applications crossplatform, Rien de tout ça
+correctAnswerIndex : 
+
+Objet 2
+question : Quelle entreprise a développé Flutter ?
+possibleAnswers : Google, Amazon, Facebook, Apple
+correctAnswerIndex : 
+
+Objet 3
+question : En quelle année Flutter a t -il été développé ?
+possibleAnswers : 2012, 2015, 2017, 2018
+correctAnswerIndex : 
+
+
+Objet 4
+question : Sur quel langage Flutter est-il basé ?
+possibleAnswers : GoLang, Rust, PHP, Dart
+correctAnswerIndex : 
+
+Objet 5
+question : En Flutter, tout est ...
+possibleAnswers : Stateless, Fonction, Widget, Column
+correctAnswerIndex : 
+
+Objet 6
+question : En Flutter, les widgets sont divisés en :
+possibleAnswers : 2 grandes classes , 4 grandes classes, 3 grandes classes, Pas de classification
+correctAnswerIndex : 
