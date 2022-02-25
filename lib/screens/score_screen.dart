@@ -1,8 +1,17 @@
-import 'package:faucon_qcm/color.dart';
 import 'package:flutter/material.dart';
 
+import 'package:faucon_qcm/color.dart';
+
 class ScoreScreen extends StatelessWidget {
-  const ScoreScreen({Key? key}) : super(key: key);
+  final double score;
+  final String message;
+  final Color textColor;
+  const ScoreScreen({
+    Key? key,
+    required this.score,
+    required this.message,
+    required this.textColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,18 +45,19 @@ class ScoreScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 5.0),
-                const Text(
-                  "Score de 90%",
+                Text(
+                  "Score de ${(score * 100).toStringAsFixed(1)}%",
                   style: TextStyle(
                     fontSize: 35.0,
-                    color: Colors.green,
+                    color: textColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 15.0),
-                const Text(
-                  "Vous avez bien répondu à toutes les questions",
-                  style: TextStyle(
+                Text(
+                  message,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
                     fontSize: 17.0,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,

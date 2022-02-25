@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: QuestScreen(quiz: allQuizzes[2]),
-      home: ScoreScreen(),
+      home: const QuestScreen(currentQuizIndex: 0),
     );
   }
 }
