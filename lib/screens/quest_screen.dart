@@ -9,10 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:faucon_qcm/color.dart';
 
 class QuestScreen extends StatefulWidget {
-  final int currentQuizIndex;
   const QuestScreen({
     Key? key,
-    required this.currentQuizIndex,
   }) : super(key: key);
 
   @override
@@ -22,6 +20,14 @@ class QuestScreen extends StatefulWidget {
 class _QuestScreenState extends State<QuestScreen> {
   final List<String> letters = ['A', 'B', 'C', 'D'];
   int selectedIndex = 0;
+  late int currentQuizIndex;
+
+  @override
+  void initState() {
+    currentQuizIndex = 0;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,8 +40,8 @@ class _QuestScreenState extends State<QuestScreen> {
         child: Column(
           children: [
             QuestionWidget(
-              position: widget.currentQuizIndex + 1,
-              question: allQuizzes[widget.currentQuizIndex].question,
+              position: currentQuizIndex + 1,
+              question: allQuizzes[currentQuizIndex].question,
             ),
             const SizedBox(height: 20.0),
             Divider(color: unselectedQuestionColor, thickness: 2.0),
@@ -43,9 +49,8 @@ class _QuestScreenState extends State<QuestScreen> {
               child: Center(
                 child: ListView.separated(
                   shrinkWrap: true,
-                  itemCount: allQuizzes[widget.currentQuizIndex]
-                      .possibleAnswers
-                      .length,
+                  itemCount:
+                      allQuizzes[currentQuizIndex].possibleAnswers.length,
                   separatorBuilder: (BuildContext context, int index) {
                     return const SizedBox(height: 8.0);
                   },
@@ -57,8 +62,8 @@ class _QuestScreenState extends State<QuestScreen> {
                         });
                       },
                       child: PropositionWidget(
-                        proposition: allQuizzes[widget.currentQuizIndex]
-                            .possibleAnswers[index],
+                        proposition:
+                            allQuizzes[currentQuizIndex].possibleAnswers[index],
                         letter: letters[index],
                         isSelected: selectedIndex == index,
                       ),
@@ -70,14 +75,17 @@ class _QuestScreenState extends State<QuestScreen> {
             GestureDetector(
               onTap: () {
                 userChoices.add(selectedIndex);
-                if (widget.currentQuizIndex < allQuizzes.length - 1) {
-                  Navigator.of(context).pushReplacement(
+                if (currentQuizIndex < allQuizzes.length - 1) {
+                  setState(() {
+                    currentQuizIndex = currentQuizIndex + 1;
+                  });
+                  /*Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) => QuestScreen(
                         currentQuizIndex: widget.currentQuizIndex + 1,
                       ),
                     ),
-                  );
+                  );*/
                 } else {
                   double score = computeUserSuccessRate(userChoices);
                   String message = getScoreMessage(score);

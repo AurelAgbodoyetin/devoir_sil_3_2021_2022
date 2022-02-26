@@ -1,7 +1,5 @@
 import 'package:faucon_qcm/color.dart';
-import 'package:faucon_qcm/data/quizzes_list.dart';
 import 'package:faucon_qcm/screens/quest_screen.dart';
-import 'package:faucon_qcm/screens/score_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: QuestScreen(quiz: allQuizzes[2]),
-      home: const QuestScreen(currentQuizIndex: 0),
+      home: const QuestScreen(),
     );
   }
 }
